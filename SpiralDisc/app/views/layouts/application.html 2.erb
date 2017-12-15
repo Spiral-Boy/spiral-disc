@@ -9,6 +9,22 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top header-color">
+      <div class="container">
+        <span>
+            <a class="" href="#"><img src="img/logo.png" alt="" class="logo"></a>
+          </span>
+          <ul class="nav pull-right nav-pills">
+            <li><a href="" class="nav">こんにちは、ゲスト様</a></li>
+            <li><a href="" class="nav">ようこそ、username様</a></li>
+            <li><a href="" class="nav">Sign in</a></li>
+            <li><a href="" class="nav">Sign up</a></li>
+            <li><a href="" class="nav">My page</a></li>
+            <li><a href="" class="nav fa fa-cart-plus">Cart</a></li>
+            <li><a href="" class="nav">Log out</a></li>
+          </ul>
+      </div>
+    </header>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
