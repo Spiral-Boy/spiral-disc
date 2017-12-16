@@ -8,24 +8,48 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="background: none">
     <header class="navbar navbar-fixed-top header-color">
       <div class="container">
         <span>
-            <a class="" href="#"><img src="img/logo.png" alt="" class="logo"></a>
+            <a class="" href="#"><img style="display: inline-block;" src="/logo.png" alt="" class="logo"></a>
           </span>
-          <ul class="nav pull-right nav-pills">
-            <li><a href="" class="nav">こんにちは、ゲスト様</a></li>
-            <li><a href="" class="nav">ようこそ、username様</a></li>
-            <li><a href="" class="nav">Sign in</a></li>
-            <li><a href="" class="nav">Sign up</a></li>
-            <li><a href="" class="nav">My page</a></li>
-            <li><a href="" class="nav fa fa-cart-plus">Cart</a></li>
-            <li><a href="" class="nav">Log out</a></li>
+          <ul class="nav pull-right nav-pills" style="font-size: 14px">
+            <% if admin_signed_in? %>
+              <li class="nav">
+                <%= link_to "商品一覧", admin_products_path, class:"nav" %>
+              </li>
+              <li class="nav">
+                <%= link_to '新規出品', new_admin_product_path, class:"nav" %>
+              </li>
+              <li class="nav">
+                <%= link_to "ユーザ一覧", admin_users_path, class:"nav" %>
+              </li>
+              <li class="nav">
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"nav" %>
+              </li>
+            <% else %>
+              <li class="nav">
+              </li>
+            <% end %>
           </ul>
       </div>
     </header>
     <%= yield %>
+    <footer class="container-fluid">
+        <div class="container">
+          <ul class="list-inline">
+            <li><a href="" title="" class=""> About</a></li>
+            <li><a href="" title="" class=""> 利用規約</a></li>
+            <li><a href="" title="" class=""> お問い合わせ</a></li>
+          </ul>
+        </div>
+          <small>
+            <span>
+            <a class="" href="#"><img src="/logo.png" alt="" class="logo"></a>
+          </span>
+          </small>
+    </footer>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
