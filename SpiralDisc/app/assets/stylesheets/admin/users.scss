@@ -1,3 +1,19 @@
 // Place all the styles related to the admin::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search {
+	width: 400px;
+	padding-bottom: 10px;
+}
+.user-list nav {
+	text-align: center;
+}
+.value-area {
+	display: inline-block;
+	width: 100px;
+}
+.genre-area {
+	display: inline-block;
+	width: 200px;
+}
