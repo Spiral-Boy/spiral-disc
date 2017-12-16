@@ -22,66 +22,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th><a href="#">Tarou Yamada</a></th>
-						<td>asdfghjk@gmail.com</td>
-						<td>商品発送待ち</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Hanako Yamada</a></th>
-						<td>qwertyui@gmail.com</td>
-						<td>特になし</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Tarou Yamada</a></th>
-						<td>asdfghjk@gmail.com</td>
-						<td>商品発送待ち</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Hanako Yamada</a></th>
-						<td>qwertyui@gmail.com</td>
-						<td>特になし</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Tarou Yamada</a></th>
-						<td>asdfghjk@gmail.com</td>
-						<td>商品発送待ち</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Hanako Yamada</a></th>
-						<td>qwertyui@gmail.com</td>
-						<td>特になし</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Tarou Yamada</a></th>
-						<td>asdfghjk@gmail.com</td>
-						<td>商品発送待ち</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Hanako Yamada</a></th>
-						<td>qwertyui@gmail.com</td>
-						<td>特になし</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Tarou Yamada</a></th>
-						<td>asdfghjk@gmail.com</td>
-						<td>商品発送待ち</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
-					<tr>
-						<th><a href="#">Hanako Yamada</a></th>
-						<td>qwertyui@gmail.com</td>
-						<td>特になし</td>
-						<td>****/**/** **:**:**</td>
-					</tr>
+					<% @users.each do |user| %>
+						<tr>
+							<th><%= link_to admin_user_path(user) do %><%= user.name %><% end %></th>
+							<th><a href="#">Tarou Yamada</a></th>
+							<td><%= user.email %></td>
+							<td>asdfghjk@gmail.com</td>
+							<td><%= user.status %></td>
+							<td>商品発送待ち</td>
+							<td><%= user.login %></td>
+							<td>****/**/** **:**:**</td>
+						</tr>
+					<% end %>
 				</tbody>
 			</table>
 			<nav>
