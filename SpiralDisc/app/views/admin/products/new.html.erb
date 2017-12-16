@@ -3,20 +3,17 @@
 			<h3>商品情報入力</h3>
 		</div>
 		<div class="panel-body" style="background-color: white;">
-			<%= form_for(@pro), html: {class: 'form-horizontal'} do |f| %>
-			<form class="form-horizontal">
+			<%= form_for(@pro, html: {class: 'form-horizontal'}) do |f| %>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="InputText">アーティスト名</label>
 					<div class="col-sm-10">
 						<%= f.text_field :artist_name, id:"InputText", class:"form-control", placeholder:"アーティスト名を入力して下さい。" %>
-						<input type="text" class="form-control" id="InputText" placeholder="アーティスト名を入力して下さい。">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="InputText">シングル/アルバム名</label>
 					<div class="col-sm-10">
 						<%= f.text_field :product_name, id:"InputText", class:"form-control", placeholder:"シングル/アルバム名を入力して下さい。" %>
-						<input type="Text" class="form-control" id="InputText" placeholder="シングル/アルバム名を入力して下さい。">
 					</div>
 				</div>
 				<div class="form-group">
@@ -31,7 +28,6 @@
 						<div class="input-group">
 							<span class="input-group-addon">￥</span>
 							<%= f.number_field :price, class:"form-control input-sm" %>
-							<input type="price" class="form-control input-sm">
 						</div>
 					</div>
 					<p class="form-control-static">(半角数字)</p>
@@ -40,7 +36,6 @@
 					<label class="col-sm-2 control-label" for="InputText">レーベル名</label>
 					<div class="col-sm-10">
 						<%= f.text_field :label, id:"InputText", class:"form-control", placeholder:"レーベル名を入力して下さい。" %>
-						<input type="text" class="form-control" id="InputText" placeholder="レーベル名を入力して下さい。">
 					</div>
 				</div>
 				<div class="form-group">
@@ -85,19 +80,16 @@
 					<label class="col-sm-2 control-label" for="InputTextarea">CD情報</label>
 					<div class="col-sm-10">
 						<%= f.text_area :info, id:"InputText", class:"form-control", placeholder:"CD情報を入力して下さい。", rows:"8" %>
-						<textarea placeholder="CD情報を入力してください。" rows="8" class="form-control" id="InputTextarea"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="InputText">在庫数</label>
 					<div class="col-sm-1">
 						<%= f.number_field :stock, class:"form-control" %>
-						<input type="text" class="form-control input-sm" id="InputText">
 					</div>
 					<p class="form-control-static">個 (半角数字)</p>
 				</div>
 				<%= f.submit '商品を作成する', class:"btn btn-primary center-block" %>
-				<button type="submit" class="btn btn-danger center-block">入力内容を確認する</button>
 			<% end %>
 		</div>
 		<div class="panel-footer" style="background-color: #f5f5f5;">
