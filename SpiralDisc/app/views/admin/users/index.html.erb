@@ -1,11 +1,11 @@
 	<div style=" padding-top: 80px" class="container clearfix">
-		<div class="input-group input-group-sm search pull-right">
-			<span class="input-group-addon">ユーザー名</span>
-			<input type="text" class="form-control" placeholder="">
-			<span class="input-group-btn">
-				<button type="button" class="btn btn-default">検索</button>
-			</span>
-		</div>
+	<%= form_tag admin_users_path, :method => 'get', class:"input-group input-group-sm search pull-right" do %>
+		<span class="input-group-addon" style="border-top-left-radius: 3px; border-bottom-left-radius: 3px;">キーワード</span>
+		<%= text_field_tag :search, params[:search], class:"form-control" %>
+		<span class="input-group-btn">
+			<%= submit_tag "検索", class:"btn btn-default", :name => nil %>
+		</span>
+	<% end %>
 	</div>
 	<div class="panel panel-default container user-list" style="background-color: #f5f5f5;">
 		<div class="panel-heading">
@@ -17,7 +17,7 @@
 					<tr>
 						<th class="col-md-3">名前</th>
 						<th class="col-md-3">メールアドレス</th>
-						<th class="col-md-3">ステータス</th>
+						<th class="col-md-3">住所</th>
 						<th class="col-md-3">最終ログイン日時</th>
 					</tr>
 				</thead>
@@ -25,35 +25,15 @@
 					<% @users.each do |user| %>
 						<tr>
 							<th><%= link_to admin_user_path(user) do %><%= user.name %><% end %></th>
-							<th><a href="#">Tarou Yamada</a></th>
 							<td><%= user.email %></td>
-							<td>asdfghjk@gmail.com</td>
-							<td><%= user.status %></td>
-							<td>商品発送待ち</td>
-							<td><%= user.login %></td>
-							<td>****/**/** **:**:**</td>
+							<td><%= user.street_address %></td>
+							<td><%= user.last_sign_in_at %></td>
 						</tr>
 					<% end %>
 				</tbody>
 			</table>
 			<nav>
-				<ul class="pagination">
-					<li>
-						<a href="#" aria-label="前のページへ">
-							<span aria-hidden="true">«</span>
-						</a>
-					</li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-						<a href="#" aria-label="次のページへ">
-							<span aria-hidden="true">»</span>
-						</a>
-					</li>
-				</ul>
+				<%= paginate @users, class: "pagenate" %>
 			</nav>
 		</div>
 		<div class="panel-footer" style="background-color: #f5f5f5;">
