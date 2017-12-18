@@ -7,27 +7,27 @@
 				<tbody>
 					<tr>
 						<th class="col-md-3" style="border-top: none;">名前</th>
-						<td class="col-md-9" style="border-top: none;">山田太郎</td>
+						<td class="col-md-9" style="border-top: none;"><%= @user.name %></td>
 					</tr>
 					<tr>
 						<th>フリガナ</th>
-						<td>ヤマダタロウ</td>
+						<td><%= @user.name_kana %></td>
 					</tr>
 					<tr>
 						<th>郵便番号</th>
-						<td>000-0000</td>
+						<td><%= @user.postal_code %></td>
 					</tr>
 					<tr>
 						<th>住所</th>
-						<td>東京都渋谷区円山町20-1 新大宗円山ビル11階</td>
+						<td><%= @user.street_address %></td>
 					</tr>
 					<tr>
 						<th>電話番号</th>
-						<td>000-0000-0000</td>
+						<td><%= @user.phone_number %></td>
 					</tr>
 					<tr>
 						<th>メールアドレス</th>
-						<td>asdfghjk@gmail.com</td>
+						<td><%= @user.email %></td>
 					</tr>
 				</tbody>
 			</table>

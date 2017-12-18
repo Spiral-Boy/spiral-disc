@@ -1,220 +1,53 @@
-	<div style=" padding-top: 80px" class="container clearfix">
-		<div class="input-group input-group-sm search pull-right">
-			<span class="input-group-addon">キーワード</span>
-			<input type="text" class="form-control" placeholder="">
-			<span class="input-group-btn">
-				<button type="button" class="btn btn-default">検索</button>
-			</span>
+<div style=" padding-top: 80px" class="container clearfix">
+	<%= form_tag admin_products_path, :method => 'get', class:"input-group input-group-sm search pull-right" do %>
+		<span class="input-group-addon" style="border-top-left-radius: 3px; border-bottom-left-radius: 3px;">キーワード</span>
+		<%= text_field_tag :search, params[:search], class:"form-control" %>
+		<span class="input-group-btn">
+			<%= submit_tag "検索", class:"btn btn-default", :name => nil %>
+		</span>
+	<% end %>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-2 genre">
+			<ul class="list-group">
+				<h4>ジャンル</h4>
+				<% @genres.each do |genre| %>
+					<li class="list-group-item"><%= genre.genre_name %></li>
+				<% end %>
+			</ul>
 		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-2 genre">
-				<ul class="list-group">
-					<h4>ジャンル</h4>
-					<li class="list-group-item">J-POP</li>
-					<li class="list-group-item">ロック＆ポップス</li>
-					<li class="list-group-item">ヒップホップ</li>
-					<li class="list-group-item">クラブ/ダンス</li>
-					<li class="list-group-item">ハードロック/メタル</li>
-					<li class="list-group-item">レゲエ</li>
-					<li class="list-group-item">JAZZ</li>
-					<li class="list-group-item">ブルース</li>
-					<li class="list-group-item">演歌/民謡</li>
-					<li class="list-group-item">クラシック</li>
-				</ul>
-			</div>
-			<div class="col-md-10 product">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="heading-text">商品一覧</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-3">
+		<div class="col-md-10 product">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="heading-text">商品一覧</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<% @products.each do |pro| %>
+							<div class="col-md-3" style="height: 308px;">
 								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
+									<%= link_to "編集", edit_admin_product_path(pro), class:"btn btn-primary btn-xs" %>
 									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
+									<%= link_to edit_admin_product_path(pro) do %>
+									    <%= attachment_image_tag pro, :image, class:"img-responsive" %>
+									<% end %>
+									<p><%= pro.artist_name %></p>
+									<p><%= pro.product_name %></p>
+									<p><%= pro.price %>円</p>
 								</div>
 							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="#" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="#" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="product-box">
-									<a href="" class="btn btn-primary btn-xs" role="button">編集</a>
-									<a href="" class="btn btn-danger btn-xs" role="button">削除</a>
-									<img class="img-responsive" src="img/CD-image.png" alt="">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>******円</p>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<nav>
-									<ul class="pagination">
-										<li>
-											<a href="#" aria-label="前のページへ">
-												<span aria-hidden="true">«</span>
-											</a>
-										</li>
-										<li class="active"><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">5</a></li>
-										<li>
-											<a href="#" aria-label="次のページへ">
-												<span aria-hidden="true">»</span>
-											</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
+						<% end %>
+
+						<div class="col-md-12">
+							<nav>
+								<%= paginate @products, class: "pagenate" %>
+							</nav>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
