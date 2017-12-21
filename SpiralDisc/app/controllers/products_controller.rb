@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 		else
 			Product.page(params[:page]).reverse_order
 		end
+	end
 
 	def show
 		
