@@ -1,6 +1,5 @@
 <div style=" padding-top: 80px" class="container clearfix">
-	<p id="notice" style="color: red;"><%= flash[:notice] %></p>
-	<%= form_tag admin_products_path, :method => 'get', class:"input-group input-group-sm search pull-right" do %>
+	<%= form_tag admin_genre_path, :method => 'get', class:"input-group input-group-sm search pull-right" do %>
 		<span class="input-group-addon" style="border-top-left-radius: 3px; border-bottom-left-radius: 3px;">キーワード</span>
 		<%= text_field_tag :search, params[:search], class:"form-control" %>
 		<span class="input-group-btn">
@@ -25,7 +24,7 @@
 		<div class="col-md-10 product">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="heading-text">商品一覧</h3>
+					<h3 class="heading-text"><%= @genre.genre_name %> 一覧</h3>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -33,13 +32,13 @@
 							<div class="col-md-3" style="height: 308px;">
 								<div class="product-box">
 									<%= link_to "編集", edit_admin_product_path(pro), class:"btn btn-primary btn-xs" %>
-									<%= link_to "削除", admin_product_path(pro), method: :delete, class:"btn btn-danger btn-xs", "data-confirm" => "本当に削除しますか？" %>
+									<%= link_to "削除", admin_product_path(pro), method: :delete, class:"btn btn-danger btn-xs" %>
 									<%= link_to edit_admin_product_path(pro) do %>
 									    <%= attachment_image_tag pro, :image, fallback: "no_image.png", class:"img-responsive" %>
 									<% end %>
 									<p><%= pro.artist_name %></p>
 									<p><%= pro.product_name %></p>
-									<p><%= pro.price.to_s(:delimited) %>円</p>
+									<p><%= pro.price %>円</p>
 								</div>
 							</div>
 						<% end %>
