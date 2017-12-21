@@ -1,3 +1,183 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul, ol {
+	list-style: none;
+}
+
+#contentsArea {
+	width: 1024px;
+	padding: 0 0 20px 0;
+	margin: 0 auto;
+	clear: both;
+}
+
+#mainContent {
+	background: url(mainContent.gif) left top repeat-y;
+	margin-top: 50px;
+}
+
+#mainContentInner {
+	background: url(mainContentInner.gif) left bottom no-repeat;
+	width: 1024px;
+	padding: 0 33px 23px 33px;
+	line-height: 1.5;
+}
+
+.subtitle {
+	margin-left: -33px;
+	padding-bottom: 15px;
+}
+
+.goodsMainArea {
+	padding: 0 0 20px;
+	margin-bottom: 20px;
+	zoom: 1;
+}
+
+.goodsJacket {
+	width: 192px;
+	float: left;
+	margin-right: 20px;
+}
+
+.goodsJacketInner {
+	padding: 0 10px 10px;
+}
+
+.goodsJacketInner table {
+	margin-bottom: 5px;
+}
+.goodsJacketInner table td {
+	width: 170px;
+	height: 170px;
+	border: 1px solid #ebeaea;
+	text-align: center;
+	vertical-align: middle;
+}
+.goodsJacketInner table td img {
+	width: 170px;
+	height: 170px;
+}
+
+.goodsDetail {
+	width: 530px;
+	float: left;
+}
+.productDetail {
+	padding: 0 0 10px;
+	border-bottom: 1px dotted #bdb9b8;
+	margin-bottom: 10px;
+}
+.goodsDetail .musicName, .goodsDetail .artists {
+	font-size: 150%;
+	line-height: 1.2;
+}
+.musicName {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.artists {
+	margin-bottom: 5px;
+}
+
+.productDetail2 {
+	padding: 0 0 10px;
+	border-bottom: 1px dotted #bdb9b8;
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+
+
+.goodsDetail2 {
+	width: 192px;
+	float: right;
+
+}
+.goodsCart {
+	padding: 15px 8px 15px 6px;
+	margin-bottom: 10px;
+}
+.goodsCart li {
+	margin-bottom: 10px;
+}
+.goodsCart li dl dt {
+	font-size: 107%;
+	font-weight: bold;
+	padding-left: 5px;
+	line-height: 1.1;
+}
+.goodsCart li dl dd {
+	text-align: right;
+}
+.goodsCart li dl dd span {
+	line-height: 1.1;
+	font-size: 167%;
+}
+.cartBtn {
+	border: 1px #555 solid;
+	background: #555;
+	border-radius: 4px;
+	margin-bottom: 2px;
+	text-align: center;
+}
+.cartBtn button {
+	width: 100%;
+	height: 35px;
+	padding: 3px 0 0;
+	border: 0;
+	font-size: 15px;
+}
+.cartBtn button i {
+	font-size: 20px;
+}
+
+.h3title {
+	background: #231815;
+	padding: 8px 10px;
+	min-height: 15px;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 109%;
+}
+.customerSection {
+	padding: 0 10px 40px;
+}
+.productDetailInfoTable {
+	width: 100%;
+}
+
+.productDetailInfoTable table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+.productDetailInfoTable table th {
+	background-color: #c6c6c6;
+	text-align: left;
+}
+.productDetailInfoTable table th div {
+	padding: 8px;
+}
+.productDetailInfoTable table th div p {
+	font-weight: bold;
+}
+.productDetailInfoTable table {
+	background-color: #f2f2f2;
+}
+
+
+.customerSection {
+	padding: 0 10px 40px;
+}
+.productDetailSentenceList {
+	width: 934px;
+}
+.productDetailSentenceTop {
+	padding-top: 4px;
+}
+.productDetailSentenceMid {
+	padding: 8px 13px 10px 11px;
+}
+
