@@ -1,26 +1,24 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
+<div class="form-wrapper", style="height: 100%">
+  <h1 style="color: #3d3d3e">LOGIN</h1>
+  <div class="form-item">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.email_field :email, autofocus: true, placeholder:"メールアドレス" %>
     </div>
-  <% end -%>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード" %>
+    </div>
+    <div class="button-panel">
+      <%= f.submit "Login", class: :button %>
+    </div>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="form-footer">
+      <p>
+      <%= link_to "Create an account", new_user_registration_path %>
+      </p>
+    </div>
   </div>
-<% end %>
+</div>
 
-<%= render "users/shared/links" %>
+
