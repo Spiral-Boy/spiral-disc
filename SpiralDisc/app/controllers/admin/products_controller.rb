@@ -1,20 +1,24 @@
 class Admin::ProductsController < ApplicationController
+
 	layout 'application.html 2'
+	before_action :authenticate_admin!
 
 	def new
 		@pro = Product.new
 		@pro.discs.build
 		@pro.discs.each do |disc|
 			disc.musics.build
-			# music.save
 		end
 		@genres = Genre.all
 	end
 
 	def create
 		@pro = Product.new(product_params)
-		@pro.save
-		redirect_to admin_products_path
+		if @pro.save
+			redirect_to admin_products_path, flash: {notice: '商品を作成しました。'}
+		else
+			redirect_to new_admin_product_path, flash: {notice: '記入漏れがあります。'}
+		end
 	end
 
 	def index
@@ -32,12 +36,26 @@ class Admin::ProductsController < ApplicationController
 
   	def update
     	@pro = Product.find(params[:id])
-    	@book.update(product_params)
+    	if @pro.update(update_product_params)
+    		redirect_to admin_products_path, flash: {notice: '商品を編集しました。'}
+    	else
+    		render :edit
+    	end
   	end
+
+  	def destroy
+    	@pro = Product.find(params[:id])
+    	@pro.destroy
+    	redirect_to admin_products_path, flash: {notice: '商品を削除しました。'}
+ 	end
 
 	private
 
 	def product_params
 	  params.require(:product).permit(:genre_id, :artist_name, :product_name, :image, :price, :info, :stock, :release_date, :product_delete, :label, { discs_attributes: [:disc_number, :disc_name, { musics_attributes: [:music_number, :music_name, :music_time] }] })
+	end
+
+	def update_product_params
+	  params.require(:product).permit(:genre_id, :artist_name, :product_name, :image, :price, :info, :stock, :release_date, :product_delete, :label, { discs_attributes: [:disc_number, :disc_name, :_destroy, :id, { musics_attributes: [:music_number, :music_name, :music_time, :_destroy, :id] }] })
 	end
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, :only => [:index, :show]
+    resources :genres, :only => [:show]
     resources :products, :only => [:index, :new, :edit, :create, :update, :destroy] do
       resources :discs, :only => [:create, :update, :destroy] do
         resources :musics, :only => [:create, :update, :destroy]

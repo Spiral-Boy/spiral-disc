@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171216130034) do
     t.integer "disc_id"
     t.integer "music_number"
     t.string "music_name"
-    t.string "music_time"
+    t.datetime "music_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

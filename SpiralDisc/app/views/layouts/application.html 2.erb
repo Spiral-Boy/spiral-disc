@@ -12,9 +12,9 @@
     <header class="navbar navbar-fixed-top header-color">
       <div class="container">
         <span>
-            <a class="" href="#">
-              <%= image_tag 'logo.png' %>
-            </a>
+            <%= link_to products_path do %>
+              <%= image_tag 'logo2.png', style:"display: inline-block; width: 140px; margin-top: 15px;" %>
+            <% end %>
           </span>
           <ul class="nav pull-right nav-pills" style="font-size: 14px">
             <% if admin_signed_in? %>
