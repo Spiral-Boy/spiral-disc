@@ -1,0 +1,107 @@
+<div id="spiral-disc">
+	<div id="contentsArea" class="clearfix">
+		<div id="mainContent">
+			<div id="mainContentInner">
+				<h2 class="subtitle"><img src="img/h2_subtitle.gif" width="1020px" height="42px" alt="商品詳細"></h2>
+					<div class="goodMainArea clearfix">
+						<div class="goodsJacket">
+							<div class="goodsJacketInner">
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tbody>
+										<tr>
+											<td><<%= @product.image_id %></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="goodsDetail">
+							<div class="productDetail">
+								<p class="musicName"><%= @product.product_name %></p>
+								<p class="artists"><%= @product.artist_name %></p>
+							</div>
+							<div class="productDetail2">
+								<p class="textcolorgray">!!! 1回の配送の合計金額が、1,500円(税込）以上で送料無料  !!!</p>
+								<p class="textcolorgray">※発送されてからお届けまでの日数は、地域により異なります</p>
+							</div>
+						</div>
+						<div class="goodsDetail2">
+							<div class="goodsCart">
+								<ul>
+									<li class="default">
+										<dl>
+											<dt>価格(税込)</dt>
+											<dd>
+												<span>'¥'<%= product.price %></span>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<p class="cartBtn">
+									<button type="submit">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										カートへ入れる
+									</button>
+								</p>
+							</div>
+						</div>
+					</div>
+				<h3 class="h3title" id="productInformation">商品の情報</h3>
+					<div class="customerSection clearfix">
+						<div class="productDetailInfoTable">
+							<table cellpadding="0" cellspacing="1" border="0">
+								<colgroup>
+									<col width="30%">
+									<col width="70%">
+								</colgroup>
+								<tbody>
+									<tr class="even">
+										<th>
+											<div><p>発売日</p></div>
+										</th>
+										<td>
+											<div><p><%= product.release_date %></p></div>
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<div><p>レーベル</p></div>
+										</th>
+										<td>
+											<div><p><%= product.label %></p></div>
+										</td>
+									</tr>
+									<tr class="even">
+										<th>
+											<div><p>ディスク枚数</p></div>
+										</th>
+										<td>
+											<div><p><%= disc.disc_number %>'枚'</p></div>
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<div><p>曲数</p></div>
+										</th>
+										<td>
+											<div><p><%= music.music_number %>'曲'</p></div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<h3 class="h3title" id="productInformation">商品の紹介</h3>
+					<div class="customerSection">
+						<div class="productDetailSentenceList">
+							<div class="productDetailSentenceTop">
+								<div class="productDetailSentenceMid">
+									<p><%= product.info %></p>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
