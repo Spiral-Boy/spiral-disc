@@ -44,7 +44,11 @@
 					<ul id="productlists" class="clearfix">
 						<li>
 							<div class="listinner">
-								<p class="thumb"><%= link_to attachment_image_tag product, :image_id, product_path(product.id) %></p>
+								<p class="thumb">
+									<%= link_to product_path(product.id) do %>
+									<%= attachment_image_tag product, :image_id %>
+									<% end %>
+								</p>
 								<div>
 									<p class="musicname"><%= link_to product_path(product.id) %><%= product.product_name %></p>
 									<p class="artists"><%= product.artist_name %></p>
