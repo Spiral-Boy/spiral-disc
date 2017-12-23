@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
     has_many :carts
+    has_many :products, through: :carts
     has_many :orders
 
     def self.search(search)

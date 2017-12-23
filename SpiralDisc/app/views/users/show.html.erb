@@ -1,0 +1,108 @@
+<div id="body" class="twocolumun clearfix">
+	<p id="notice" style="color: red;"><%= flash[:notice] %></p>
+    <div id="searchsidebar">
+		<section class="menubox">
+			<div class="sidebox sidesearchbox">
+				<h3>購入履歴</h3>
+				<ul>
+					<li>
+						<a href="#content">購入履歴</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebox sidesearchbox">
+				<h3>会員登録情報</h3>
+				<ul>
+					<li>
+						<a href="#secregist">会員登録情報</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebox sidesearchbox">
+				<h3>退会</h3>
+				<ul>
+					<li>
+						<%= link_to "退会の手続き", user_registration_path, :method => 'delete', "data-confirm" => "本当に退会しますか？" %>
+					</li>
+				</ul>
+			</div>
+		</section>
+    </div>
+    <div id="content" class="clearfix">
+    	<article>
+    		<section id="orderlist">
+    			<section class="section">
+    				<!-- 購入履歴　-->
+    				<div class="sectionheader">
+    					<h3>購入履歴</h3>
+    				</div>
+    				<div class="listblock clearfix">
+    					<div class="orderlist">
+							<table class="table">
+								<tbody>
+									<% @orders.each do |order| %>
+										<tr style="border-bottom: solid 1px #ddd;">
+											<td class="col-md-3" style="border-top: none;">
+												<%= order.created_at.strftime("%Y年 %m月 %d日") %><br>
+												注文番号：<%= order.id %><br>
+												小計：<%= order.all_price.to_s(:delimited) %>円<br>
+												ステータス：<%= order.status %>
+											</td>
+											<td class="col-md-2" style="border-top: none;">
+												<% order.order_products.each do |order_product| %>
+													<div style="margin-bottom: 10px; height: 100px">
+													<%= attachment_image_tag order_product.product, :image, class:"img-responsive", style:"width: 100px;" %>
+													</div>
+												<% end %>
+											</td>
+											<td class="col-md-7" style="border-top: none;">
+												<% order.order_products.each do |order_product| %>
+												<div style="margin-bottom: 10px; height: 100px">
+													<%= order_product.product.artist_name %><br>
+													<%= order_product.product.product_name %><br>
+													<%= order_product.product.price.to_s(:delimited) %>円<br>
+													<%= order_product.quantity %>個
+												</div>
+												<% end %>
+											</td>
+										</tr>
+									<% end %>
+								</tbody>
+							</table>
+							<%= paginate @orders, class: "pagenate" %>
+    					</div>
+    				</div>
+    			</section>
+    		</section>
+			<section id="secregist" class="section">
+				<div class="sectioninner">
+					<div class="sectionheader">
+						<h3>会員登録情報</h3>
+						</span>
+					</div>
+					<div class="sectionbody">
+						<table>
+							<tbody>
+								<tr>
+									<th>基本情報</th>
+									<td>
+										<p><%= @user.name %></p>
+										<p><%= @user.postal_code %></p>
+										<p><%= @user.street_address %></p>
+										<p><%= @user.phone_number %></p>
+										<p><%= @user.email %></p>
+									</td>
+									<td class="change">
+										<p class="btn">
+											<%= link_to "変更", edit_user_path(@user.id) %>
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+    	</article>
+    </div>
+</div>

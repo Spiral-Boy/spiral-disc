@@ -1,0 +1,50 @@
+<section id="secregist" class="section" style="margin: 70px 200px;">
+	<div class="sectioninner">
+		<div class="sectionheader" style="margin-bottom: 20px;">
+			<h3>登録情報変更</h3>
+			</span>
+		</div>
+		<div class="sectionbody">
+			<%= form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="InputText">お名前</label>
+					<div class="col-sm-8">
+						<%= f.text_field :name, id:"InputText", class:"form-control" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="InputText">フリガナ</label>
+					<div class="col-sm-8">
+						<%= f.text_field :name_kana, id:"InputText", class:"form-control" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="InputText">郵便番号</label>
+					<div class="col-sm-3">
+						<%= f.text_field :postal_code, id:"InputText", class:"form-control" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="InputText">住所</label>
+					<div class="col-sm-8">
+						<%= f.text_field :street_address, class:"form-control" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="InputText">電話番号</label>
+					<div class="col-sm-3">
+						<%= f.text_field :phone_number, id:"InputText", class:"form-control" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="InputSelect">email</label>
+					<div class="col-sm-8">
+						<%= f.email_field :email, class:"form-control" %>
+					</div>
+				</div>
+				<%= f.submit '変更する', class:"btn btn-primary center-block" %>
+			<% end %>
+		</div>
+		</div>
+	</div>
+</section>
