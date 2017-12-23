@@ -1,52 +1,43 @@
-	<div class="shopping">
-		<nav class="shopping-box clearfix">
-			<h3 class="toptext"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ショッピングカート</h3>
+<div class="shopping">
+	<nav class="shopping-box clearfix">
+		<h3 class="toptext"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ショッピングカート</h3>
 
-			<div class="content-box clearfix">
-				<div class="cart">
-					<table width="100%">
-						<tbody>
+		<div class="content-box clearfix">
+			<div class="cart">
+				<table width="100%">
+					<tbody>
+						<% @carts.each do |cart| %>
 							<tr>
-								<td width="35%"><img class="product-img" src="img/CD-image.png" alt=""></td>
-								<td width="35%">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>¥00,000</p>
+								<td width="30%">
+									<%= attachment_image_tag cart.product, :image, class:"product-img" %>
 								</td>
-								<td width="20%">個数選択</td>
-								<td width="10%"><a href="#">削除</a></td>
-							</tr>
-							<tr>
-								<td width="35%"><img class="product-img" src="img/CD-image.png" alt=""></td>
-								<td width="35%">
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>¥00,000</p>
+								<td width="25%">
+									<p><%= cart.product.artist_name %></p>
+									<p><%= cart.product.product_name %></p>
+									<p><%= cart.product.price.to_s(:delimited) %> 円</p>
 								</td>
-								<td width="20%">個数選択</td>
-								<td width="10%"><a href="#">削除</a></td>
-							</tr>
-							<tr>
-								<td><img class="product-img" src="img/CD-image.png" alt=""></td>
-								<td>
-									<p>アーティスト名</p>
-									<p>CDタイトル</p>
-									<p>¥00,000</p>
+								<td width="15%">
+									<p><%= cart.quantity %> 枚</p>
 								</td>
-								<td>個数選択</td>
-								<td><a href="#">削除</a></td>
+								<td width="20%">
+									<p>小計 <%= cart.price.to_s(:delimited) %> 円</p>
+								</td>
+								<td width="10%">
+									<p>削除</p>
+								</td>
 							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="order">
-					<a class= order-btn href="#">注文を確定する</a>
-					<div class="order-all clearfix">
-						<p class="order-all-text">小計</p>
-						<p class="order-all-price">00,000 円</p>
-					</div>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+			<div class="order">
+				<%= link_to "注文を確定する", orders_path, :method => 'post', class:"order-btn", "data-confirm" => "注文を確定しますか？" %>
+				<div class="order-all clearfix">
+					<p class="order-all-text">小計</p>
+					<p class="order-all-price"><%= @total_price.to_s(:delimited) %> 円</p>
 				</div>
 			</div>
+		</div>
 
-		</nav>
-	</div>
+	</nav>
+</div>

@@ -1,3 +1,66 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.shopping {
+  margin-bottom: 50px;
+}
+.shopping-box {
+	width: 1024px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+nav h3 {
+  color: #fff;
+}
+.product-img {
+	width: 150px;
+}
+.cart {
+	width: 70%;
+	float: left;
+	padding: 20px 0;
+	margin: 20px 0;
+	background-color: #f0f0f0;
+  border-top: 1px solid #085078;
+  border-bottom: 1px solid #085078;
+}
+.product-img {
+	margin-left: 20px;
+  margin-bottom: 5px;
+}
+.order {
+	float:right;
+	width: 25%;
+	height: 150px;
+	border: 2px solid #085078;
+	border-radius: 4px;
+}
+.order-btn{
+	text-align: center;
+    display: block;
+    padding: 10px;
+    margin: 30px 30px 10px 30px;
+    text-decoration: none;
+    background: #085078;
+    color: #FFF;
+    border-radius: 4px;
+}
+.order-all{
+	margin: 0 40px;
+}
+.order-all-text {
+	float: left;
+}
+.order-all-price {
+	float: right;
+	font-weight: bold;
+	color: #085078;
+}
+
+.content-box {
+	background: #f0f0f0;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 40px;
+}

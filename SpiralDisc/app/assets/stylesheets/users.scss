@@ -2,3 +2,449 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+a {
+	text-decoration: none;
+}
+body {
+  overflow: visible !important;
+  background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+ }
+#body {
+	margin-top: 60px;
+}
+
+.clearfix::after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+body {
+	min-width: 1000px;
+	margin: auto;
+	position: relative;
+	color: #2d2d2d;
+	font-size: 13px;
+	line-height: 1.6;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Lucida Grande", Verdana, "ＭＳ Ｐゴシック", sans-serif
+}
+
+#body {
+	width: 980px;
+	margin: 0 auto 0;
+	position: relative;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+.contents {
+    max-width: 990px;
+    margin: 0 auto;
+}
+.leftcontent,
+.rightcontent {
+    padding-left: 0;
+    padding-right: 0;
+}
+.leftcontent {
+	position: relative;
+    float: left;
+    width: 200px;
+    padding: 19px 19px;
+    border: 1px solid #dedede;
+
+}
+.leftcontent h2 {
+	font-size: 18px;
+	position: relative;
+}
+.lists {
+	margin: 17px 0 0 ;
+	padding: 0;
+	border-top: #ebebeb 1px solid;
+}
+.lists li {
+	margin: 17px 0 0;
+	line-height: 1.4;
+	border-bottom: #ebebeb 1px solid;
+}
+#rightcontent {
+    float: right;
+    width: 760px;
+}
+#productlist {
+	margin: 10PX 0 0;
+}
+#product {
+	width: 100%;
+	border-top: 1px solid #ededed;
+}
+#productlistblock {
+	padding: 0 0 25px;
+}
+#productlists {
+	margin: 0 0 0 -35px;
+}
+#productlists li {
+	float: left;
+	width: 125px;
+	margin: 0 0 0 34px;
+	height: 263px;
+}
+.listinner {
+	font-size: 10px;
+}
+.thumb {
+	text-align: left;
+	padding: 12px 0 0 0;
+}
+.thumb a {
+	width: 125px;
+	height: 150px;
+	display: inline-block;
+}
+.thumb a img {
+	width: 125px;
+	height: 150px;
+	display: block;
+}
+.listinner div {
+	margin: 6px 0 0;
+	line-height: 1.5;
+}
+.musicname {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 12px;
+	width: 102px;
+}
+.price {
+	margin: 4px 0 0 0;
+	font-size: 15px;
+	line-height: 1.1;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table tbody tr {
+	border-bottom: 1px solid #dcdcdc;
+}
+table tbody th {
+	padding: 25px 0 23px 0;
+	border: none;
+	width: 175px;
+	vertical-align: middle;
+	font-size: 15px;
+}
+table tbody td {
+	padding: 25px 0 23px 0;
+	border: none;
+	line-height: 2.0;
+}
+th, td {
+	text-align: left;
+	vertical-align: middle;
+	empty-cells: show;
+	margin: 0 0 0 0;
+}
+#searchsidebar {
+	float: left;
+	width: 150px;
+	overflow: hidden;
+	margin-top: 50px;
+}
+#searchsidebar .sidebox {
+	margin: 23px 0 0;
+	padding: 0 0 15px;
+	border-bottom: solid 1px #3d3d3e;
+}
+#searchsidebar .sidebox h3 {
+	font-size: 18px;
+	color: #3d3d3e;
+}
+#searchsidebar .sidebox ul {
+	margin-top: 8px;
+}
+#searchsidebar .sidebox ul li {
+	margin: 2px 0 0;
+}
+#searchsidebar .sidebox ul li a{
+	padding: 3px 0;
+	display: block;
+	color: #3d3d3e;
+}
+
+#content {
+	float: right;
+	width: 780px;
+	margin: 28px 0 0;
+}
+.section {
+	border-top: none;
+	padding: 0 0 25px 0;
+}
+.sectioninner {
+	padding: 36px 48px 40px 48px;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	background-color: #f0f0f0;
+}
+.sectionheader {
+	border-bottom: 1px solid #dcdcdc;
+}
+#orderlist {
+	background: #f0f0f0;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	padding: 36px 48px 40px;
+	margin-bottom: 25px;
+}
+#orderlist .noresult {
+	text-align: center;
+}
+#orderlist .noresult .txt {
+	margin: 40px 0 0 0;
+	font-size: 15px;
+}
+#orderlist .noresult .info {
+	margin: 40px 0 0 0;
+}
+
+.orderlist {
+	background: #f0f0f0;
+	padding: 15px 0 0;
+	margin: 15px 0 0;
+	border-radius: 4px;
+}
+.orderstatus {
+	padding: 0 10px;
+}
+.status {
+	font-size: 18px;
+}
+.deliveryday {
+	margin: 0 0 0 10px;
+}
+table .orderdetail {
+	padding: 17px 28px;
+}
+table.resist {
+	border-color: #d2d2d2;
+	border-bottom: 1px solid #dcdcdc;
+	border-collapse: separate;
+	padding: 45px 45px;
+}
+table.resist tbody tr {
+	border-bottom: none;
+}
+.goodsbox {
+	padding: 0;
+}
+.goodsdata {
+	width: 100%;
+	margin: 0 23px 15px 0;
+}
+.thumb {
+	width: 110px;
+	float: left;
+	margin-right: 15px;
+}
+.thumbdetail {
+	width: 450px;
+	float: left;
+}
+.thumbdetail .musicname {
+	width: 450px;
+}
+tr.thumbbox .thumbdetail .price {
+	font-size: 15px;
+}
+tr.thumbbox .thumbdetail .price .tax {
+	margin: 0 0 0 4px;
+	font-size: 11px;
+}
+tr.thumbbox .thumbdetail .price .cnt {
+	font-size: 11px;
+}
+.orderlist .orderpaydetail {
+	margin: 15px 0 0 0;
+	padding: 0 28px 15px;
+	font-size: 15px;
+}
+.orderlist .orderpaydetail li {
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+
+table tbody td.change {
+	width: 51px;
+}
+
+table tbody td span.info.password {
+	margin: 0 0 0 20px;
+}
+.link {
+	text-align: right;
+	margin: 20px 0 0 0;
+}
+.form-footer {
+  font-size: 1em;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-footer a:hover {
+  border-bottom: 1px dotted #8c8c8c;
+}
+.header-color {
+	background-color: #3d3d3e;
+}
+.nav {
+	color: #fafafa;
+	padding-top: 5px;
+}
+.search {
+	width: 400px;
+	padding-bottom: 10px;
+}
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #3d3d3e;
+  margin-top: 20px;
+}
+footer a {
+  color: #fafafa;
+}
+
+
+#content {
+	float: right;
+	width: 780px;
+	margin: 28px 0 0;
+}
+.section {
+	border-top: none;
+	padding: 0 0 25px 0;
+}
+.sectioninner {
+	padding: 36px 48px 40px 48px;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	background-color: #f0f0f0;
+}
+.sectionheader {
+	border-bottom: 1px solid #dcdcdc;
+}
+#orderlist {
+	background: #f0f0f0;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	padding: 36px 48px 40px;
+	margin-bottom: 25px;
+}
+#orderlist .noresult {
+	text-align: center;
+}
+#orderlist .noresult .txt {
+	margin: 40px 0 0 0;
+	font-size: 15px;
+}
+#orderlist .noresult .info {
+	margin: 40px 0 0 0;
+}
+
+.orderlist {
+	background: #f0f0f0;
+	padding: 15px 0 0;
+	margin: 15px 0 0;
+	border-radius: 4px;
+}
+.orderstatus {
+	padding: 0 28px;
+}
+.status {
+	font-size: 18px;
+}
+.deliveryday {
+	margin: 0 0 0 10px;
+}
+table .orderdetail {
+	padding: 17px 28px;
+}
+table.resist {
+	border-color: #d2d2d2;
+	border-bottom: 1px solid #dcdcdc;
+	border-collapse: separate;
+	padding: 45px 45px;
+}
+table.resist tbody tr {
+	border-bottom: none;
+}
+.goodsbox {
+	padding: 0;
+}
+.goodsdata {
+	width: 100%;
+	margin: 0 23px 15px 0;
+}
+.thumb {
+	width: 110px;
+	float: left;
+	margin-right: 15px;
+}
+.thumbdetail {
+	width: 450px;
+	float: left;
+}
+.thumbdetail .musicname {
+	width: 450px;
+}
+tr.thumbbox .thumbdetail .price {
+	font-size: 15px;
+}
+tr.thumbbox .thumbdetail .price .tax {
+	margin: 0 0 0 4px;
+	font-size: 11px;
+}
+tr.thumbbox .thumbdetail .price .cnt {
+	font-size: 11px;
+}
+.orderlist .orderpaydetail {
+	margin: 15px 0 0 0;
+	padding: 0 28px 15px;
+	font-size: 15px;
+}
+.orderlist .orderpaydetail li {
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+
+table tbody td.change {
+	width: 51px;
+}
+
+table tbody td span.info.password {
+	margin: 0 0 0 20px;
+}
+.link {
+	text-align: right;
+	margin: 20px 0 0 0;
+}

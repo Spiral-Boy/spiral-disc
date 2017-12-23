@@ -22,12 +22,12 @@ Rails.application.routes.draw do
   end
 
   resources :users, :only => [:show, :edit, :update] do
-    resources :cart, :only => [:index, :create, :update]
+    resources :carts, :only => [:index, :create, :update]
   end
 
   resources :products, :only => [:index, :show]
 
-  resources :order, :only => [:create]
+  resources :orders, :only => [:create]
 
   root 'products#index'
 
