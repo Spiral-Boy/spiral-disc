@@ -9,20 +9,22 @@
 						<% @carts.each do |cart| %>
 							<tr>
 								<td width="30%">
-									<%= attachment_image_tag cart.product, :image, class:"product-img" %>
+									<%= link_to product_path(cart.id) do %>
+										<%= attachment_image_tag cart.product, :image, class:"product-img" %>
+									<% end %>
 								</td>
 								<td width="25%">
 									<p><%= cart.product.artist_name %></p>
 									<p><%= cart.product.product_name %></p>
 									<p><%= cart.product.price.to_s(:delimited) %> 円</p>
 								</td>
-								<td width="15%">
+								<td width="10%">
 									<p><%= cart.quantity %> 枚</p>
 								</td>
 								<td width="20%">
 									<p>小計 <%= cart.price.to_s(:delimited) %> 円</p>
 								</td>
-								<td width="10%">
+								<td width="15%">
 									<p>削除</p>
 								</td>
 							</tr>
