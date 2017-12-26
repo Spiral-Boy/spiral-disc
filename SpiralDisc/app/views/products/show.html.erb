@@ -51,35 +51,35 @@
 							</colgroup>
 							<tbody>
 								<tr class="even">
-									<th>
-										<div><p>発売日</p></div>
+									<th id="narrow">
+										<div><p>  発売日</p></div>
 									</th>
-									<td>
-										<div><p><%= @product.release_date %></p></div>
+									<td id="narrow">
+										<div><p>  <%= @product.release_date %></p></div>
 									</td>
 								</tr>
 								<tr>
-									<th>
-										<div><p>レーベル</p></div>
+									<th id="narrow">
+										<div><p>  レーベル</p></div>
 									</th>
-									<td>
-										<div><p><%= @product.label %></p></div>
+									<td id="narrow">
+										<div><p>  <%= @product.label %></p></div>
 									</td>
 								</tr>
 								<tr class="even">
-									<th>
-										<div><p>ディスク枚数</p></div>
+									<th id="narrow">
+										<div><p>  ディスク枚数</p></div>
 									</th>
-									<td>
-										<div><p><%= @disc %>枚</p></div>
+									<td id="narrow">
+										<div><p>  <%= @discs.count %>枚</p></div>
 									</td>
 								</tr>
 								<tr>
-									<th>
-										<div><p>曲数</p></div>
+									<th id="narrow">
+										<div><p>  曲数</p></div>
 									</th>
-									<td>
-										<div><p><%= @music %>曲</p></div>
+									<td id="narrow">
+										<div><p>  <%= @musics.count %>曲</p></div>
 									</td>
 								</tr>
 							</tbody>
@@ -97,44 +97,38 @@
 					</div>
 				</div>
 				<h3 class="h3title" id="productInformation">収録内容</h3>
-				<div class="customerSection">
-					<div class="productDetailSentenceList">
-						<div class="productDetailSentenceTop">
-							<div class="productDetailSentenceMid">
-								<p>・構成数 | <%= @disc %>枚</p>
-								<p>・合計収録時間 | <%= @music_all_time %></p>
-							</div>
-						</div>
-					</div>
-				</div>
+
 					<div class="productDetailInfoTable">
 						<div class="productDetailInfoTable">
 						<table cellpadding="0" cellspacing="1" border="0">
+						<% @discs.each do |disc| %>
+						<h3 class="h3title" id="productFormat">[<%= disc.disc_name %>]</h3>
 							<colgroup>
-								<col width="20%">
+								<col width="10%">
 								<col width="50%">
-								<col width="30%">
+								<col width="20%">
 							</colgroup>
 							<thead>
-								<th>曲番号</th>
-								<th>タイトル</th>
-								<th>時間</th>
+								<th  id="narrow", style="text-align: center">曲番号</th>
+								<th id="narrow">タイトル</th>
+								<th id="narrow">時間</th>
 							</thead>
 							<tbody>
-							<%= @musicc.each do |music| %>
+							<% disc.musics.each do |music| %>
 								<tr class="even">
-									<td>
-										<div><p><%= music.music_number %></p></div>
+									<td id="narrow">
+										<div style="text-align: center"><p><%= music.music_number %></p></div>
 									</td>
-									<td>
+									<td id="narrow">
 										<div><p><%= music.music_name %></p></div>
 									</td>
-									<td>
+									<td id="narrow">
 										<div><p><%= music.music_time %></p></div>
 									</td>
 								</tr>
 							<% end %>
 							</tbody>
+						<% end %>
 						</table>
 						</div>
 					</div>
