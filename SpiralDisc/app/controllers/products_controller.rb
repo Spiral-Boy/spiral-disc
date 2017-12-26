@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 	def index
 		@products = Product.all
 		@products = Product.page(params[:page]).reverse_order
+		@genres = Genre.all
 		@products = if params[:search]
 			@products = Product.search(params[:search]).page(params[:page]).reverse_order
 		else
