@@ -13,8 +13,12 @@ class ProductsController < ApplicationController
 	def show
 		@product = Product.find(params[:id])
 		@discs = @product.discs
-		@music_all_time = 0
+	  	@total_music = 0
+	  	@discs.each do |disc|
+	  		@total_music += disc.musics.count
+	  	end
 		@genres = Genre.all
+		@cart = current_user.carts.new
 	end
 
 	private

@@ -9,7 +9,7 @@
 						<% @carts.each do |cart| %>
 							<tr>
 								<td width="30%">
-									<%= link_to product_path(cart.id) do %>
+									<%= link_to product_path(cart.product.id) do %>
 										<%= attachment_image_tag cart.product, :image, class:"product-img" %>
 									<% end %>
 								</td>
@@ -18,14 +18,21 @@
 									<p><%= cart.product.product_name %></p>
 									<p><%= cart.product.price.to_s(:delimited) %> 円</p>
 								</td>
-								<td width="10%">
-									<p><%= cart.quantity %> 枚</p>
+								<td width="15%">
+									<p style="margin-left: 8px;"><%= cart.quantity %> 枚</p>
+									<%= form_for(cart, url: user_cart_path(current_user, cart), html: {style: 'padding: 0px;'}, method: :patch) do |f| %>
+										<%#= f.hidden_field :id, value:"#{cart.id}" %>
+										<%= f.select :quantity, [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"],["9","9"],["10","10"]] %>
+										<%= f.submit '枚数変更', class:"btn btn-primary center-block", style:"font-size: 5px; height: 20px; padding: 0px; margin: 0px;" %>
+									<% end %>
 								</td>
 								<td width="20%">
 									<p>小計 <%= cart.price.to_s(:delimited) %> 円</p>
 								</td>
-								<td width="15%">
-									<p>削除</p>
+								<td width="10%">
+									<p>
+									<%= link_to "削除", user_cart_path(current_user, cart.id), method: :delete,  "data-confirm" => "本当に削除しますか？" %>
+									</p>
 								</td>
 							</tr>
 						<% end %>
