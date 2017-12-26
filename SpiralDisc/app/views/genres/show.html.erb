@@ -1,6 +1,6 @@
 <!-- 検索フォーム -->
 <div class="container clearfix">
-	<%= form_tag products_path, :method => 'get', class:"input-group input-group-sm search pull-right" do %>
+	<%= form_tag genre_path, :method => 'get', class:"input-group input-group-sm search pull-right" do %>
 		<%= text_field_tag :search, params[:search], class:"form-control", placeholder:"キーワード" %>
 		<span class="input-group-btn">
 			<%= submit_tag "検索", class:"btn btn-default" %>
