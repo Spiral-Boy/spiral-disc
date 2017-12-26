@@ -10,6 +10,16 @@ class ProductsController < ApplicationController
 	end
 
 	def show
-		
+		@product = Product.find(params[:id])
+		@disc = Disc.where(product_id: @product.id).count
+		@music = Music.where(disc_id: @product.id).count
+		@music_all_time = Music.where(music_time: @product.id).count
+		@genres = Genre.all
+	end
+
+	private
+
+	def product_params
+	  params.require(:product).permit(:genre_id, :artist_name, :product_name, :image, :price, :info, :stock, :release_date, :label, { discs_attributes: [:disc_number, :disc_name, { musics_attributes: [:music_number, :music_name, :music_time] }] })
 	end
 end

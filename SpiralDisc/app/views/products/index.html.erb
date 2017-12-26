@@ -15,6 +15,7 @@
 	<section class="leftcontent">
 		<section id="genrelist">
 			<h2>ジャンル</h2>
+			
 			<ul class="lists">
 				<li><a href="#">J-POP</a></li>
 				<li><a href="#">ロック＆ポップス</a></li>
@@ -36,12 +37,12 @@
 			<section id="productlist">
 				<h1>商品一覧</h1>
 			</section>
-
-			<% @products.each do |product| %>
-
 			<section id="product">
 				<div id="productlistblock" class="clearfix">
 					<ul id="productlists" class="clearfix">
+
+					<% @products.each do |product| %>
+
 						<li>
 							<div class="listinner">
 								<p class="thumb">
@@ -50,19 +51,21 @@
 									<% end %>
 								</p>
 								<div>
-									<p class="musicname"><%= link_to product_path(product.id) %><%= product.product_name %></p>
+									<p class="musicname", style="color: #3d3d3e"><%= link_to product.product_name, product_path(product.id) %></p>
 									<p class="artists"><%= product.artist_name %></p>
-									<p class="price">¥<%= product.price %>税込</p>
+									<p class="price">¥<%= product.price %> (税込)</p>
 								</div>
 							</div>
 						</li>
+
+					<% end %>
+
 					</ul>
 				</div>
 			</section>
 
-		<% end %>
-
 		<%= paginate @products, class: "pagenate" %>
+
 		</article>
    </div>
 </div>

@@ -12,12 +12,14 @@
     <header class="navbar navbar header-color">
     <div class="container">
       <div class="">
+      <%= link_to products_path do %>
         <%= image_tag 'logo2.png', style:"display: inline-block; width: 140px; margin-top: 15px;" %>
+      <% end %>
       <ul class="nav nav-pills pull-right", style="color: #fff">
       <!-- user -->
         <% if user_signed_in?%>
           <li class="nav">
-            <p style="padding: 10px 15px;, margin: 0;">こんにちは,<%= current_user.name %>様</p>
+            <p style="padding: 10px 15px;, margin: 0;">こんにちは, <%= current_user.name %> 様</p>
           </li>
           <li class="nav">
             <%= link_to "My page", user_path(current_user.id) %>
@@ -49,7 +51,11 @@
     <%= yield %>
 
     <footer class="container-fluid">
-      <small><%= image_tag 'logo2.png', style:"display: inline-block; width: 140px; margin-top: 15px;" %></small>
+      <small>
+      <%= link_to products_path do %>
+        <%= image_tag 'logo2.png', style:"display: inline-block; width: 140px; margin-top: 15px;" %>
+      <% end %>
+      </small>
       <p style="color: #fff">@Spiral-Boys<%= link_to ".",  admin_session_path %></p>
     </footer>
     <%= javascript_include_tag "application" %>
