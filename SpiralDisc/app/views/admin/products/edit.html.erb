@@ -1,5 +1,4 @@
 <div class="panel panel-default container" style="background-color: #f5f5f5; margin-top: 80px;">
-		<p id="notice" style="color: red;"><%= flash[:notice] %></p>
 		<div class="panel-heading" style="background-color: #f5f5f5;">
 			<h3>商品情報編集</h3>
 		</div>
@@ -51,25 +50,8 @@
 						<%= f.collection_select :genre_id, Genre.all, :id, :genre_name, {} ,{:class => "form-control genre-area"} %>
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="InputText">Disc名</label>
-					<div class="col-sm-10">
-						<div>
-						<%= f.fields_for :discs do |b| %>
-								<%= b.number_field :disc_number, class:"form-control input-sm discnumber", placeholder:"1",style:"margin-top: 10px;" %>
-								<%= b.text_field :disc_name, id:"InputText", class:"form-control input-sm discname", placeholder:"Disc1" %>
-								<div>
-									<%= b.fields_for :musics do |m| %>
-										<%= m.number_field :music_number, class:"form-control input-sm ", placeholder:"曲番", style:"width: 80px; display: inline-block; margin: 5px 0 0 30px;" %>
-										<%= m.text_field :music_name, id:"InputText", class:"form-control input-sm", placeholder:"曲名", style:"width: 300px; display: inline-block; margin: 5px 0 0 5px;" %>
-										<%= m.time_field :music_time, class:"form-control input-sm", style:"width: 100px; display: inline-block; margin: 5px 5px 0 5px;" %>
-										<input style="display: inline-block;" type="button" class="remove" value="削除"><br>
-									<% end %>
-								</div>
-						<% end %>
-						</div>
-					</div>
-				</div>
+				<%= f.hidden_field :id %>
+				<%= render partial: 'admin/products/form', locals: {f: f } %>
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="InputTextarea">CD情報</label>
 					<div class="col-sm-10">

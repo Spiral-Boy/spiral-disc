@@ -6,9 +6,7 @@ class Admin::ProductsController < ApplicationController
 	def new
 		@pro = Product.new
 		@pro.discs.build
-		@pro.discs.each do |disc|
-			disc.musics.build
-		end
+		@pro.discs.first.musics.build
 		@genres = Genre.all
 	end
 
@@ -17,7 +15,7 @@ class Admin::ProductsController < ApplicationController
 		if @pro.save
 			redirect_to admin_products_path, flash: {notice: '商品を作成しました。'}
 		else
-			redirect_to new_admin_product_path, flash: {notice: '記入漏れがあります。'}
+			render :new
 		end
 	end
 
@@ -52,7 +50,7 @@ class Admin::ProductsController < ApplicationController
 	private
 
 	def product_params
-	  params.require(:product).permit(:genre_id, :artist_name, :product_name, :image, :price, :info, :stock, :release_date, :product_delete, :label, { discs_attributes: [:disc_number, :disc_name, { musics_attributes: [:music_number, :music_name, :music_time] }] })
+	  params.require(:product).permit(:genre_id, :artist_name, :product_name, :image, :price, :info, :stock, :release_date, :product_delete, :label, { discs_attributes: [:disc_number, :disc_name, :_destroy, { musics_attributes: [:music_number, :music_name, :music_time, :_destroy] }] })
 	end
 
 	def update_product_params
