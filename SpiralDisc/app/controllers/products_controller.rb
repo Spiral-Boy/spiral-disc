@@ -11,9 +11,8 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-		@disc = Disc.where(product_id: @product.id).count
-		@music = Music.where(disc_id: @product.id).count
-		@music_all_time = Music.where(music_time: @product.id).count
+		@discs = @product.discs
+		@music_all_time = 0
 		@genres = Genre.all
 	end
 
