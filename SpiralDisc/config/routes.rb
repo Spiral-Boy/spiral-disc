@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, :only => [:show, :edit, :update] do
-    resources :carts, :only => [:index, :create, :update]
+    resources :carts, :only => [:index, :create, :update, :destroy]
   end
 
   resources :products, :only => [:index, :show]
