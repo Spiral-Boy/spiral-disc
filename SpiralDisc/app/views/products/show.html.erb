@@ -1,140 +1,146 @@
-	<div id="spiral-disc">
-		<div id="contentsArea" class="clearfix">
-			<div id="mainContent">
-					<div id="mainContentInner">
-						<h2 class="subtitle">
-							<%= image_tag 'h2_subtitle.png', width:"1020px", height:"42px" %>
-						</h2>
-						<div class="goodMainArea clearfix">
-							<div class="goodsJacket">
-								<div class="goodsJacketInner">
-									<table cellpadding="0" cellspacing="0" border="0">
-										<tbody>
-											<tr>
-												<td>
-													<img src="img/image1.jpg" alt>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="goodsDetail">
-								<div class="productDetail">
-									<p class="musicName">simon werner a disparu</p>
-									<p class="artists">
-										<a href="#">sonic youth</a>
-									</p>
-								</div>
-								<div class="productDetail2">
-									<p class="textcolorgray">
-										!!! 1回の配送の合計金額が、1,500円(税込）以上で送料無料  !!!
-									</p>
-									<p class="textcolorgray">
-										※お支払い方法が各種前払いの場合、お支払い確認後の発送となります
-									</p>
-									<p class="textcolorgray">
-									※発送されてからお届けまでの日数は、地域により異なります
-									</p>
-								</div>
-							</div>
-							<div class="goodsDetail2">
-								<div class="goodsCart">
-									<ul>
-										<li class="default">
-											<dl>
-												<dt>価格(税込)</dt>
-												<dd>
-													<span>¥1,080</span>
-												</dd>
-											</dl>
-										</li>
-									</ul>
-									<p class="cartBtn">
-										<button type="submit">
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-										カートへ入れる
-										</button>
-									</p>
-								</div>
-							</div>
+<div id="spiral-disc">
+	<div id="contentsArea" class="clearfix">
+		<div id="mainContent">
+			<div id="mainContentInner">
+				<h2 class="subtitle"><%= image_tag 'h2_subtitle.png', width:"1020px", height:"42px" %></h2>
+				<div class="goodMainArea clearfix">
+					<div class="goodsJacket">
+						<div class="goodsJacketInner">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tbody>
+									<tr>
+										<td><%= attachment_image_tag @product, :image %></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-						<h3 class="h3title" id="productInformation">
-							商品の情報
-						</h3>
-						<div class="customerSection clearfix">
-							<div class="productDetailInfoTable">
-								<table cellpadding="0" cellspacing="1" border="0">
-								<colgroup>
-									<col width="30%">
-									<col width="70%">
-								</colgroup>
-									<tbody>
-										<tr class="even">
-											<th>
-												<div>
-													<p>発売日</p>
-												</div>
-											</th>
-											<td>
-												<div>
-													<p>20**/**/**</p>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<div>
-													<p>レーベル</p>
-												</div>
-											</th>
-											<td>
-												<div>
-													<p>WARNER MUSIC JAPAN</p>
-												</div>
-											</td>
-										</tr>
-										<tr class="even">
-											<th>
-												<div>
-													<p>ディスク枚数</p>
-												</div>
-											</th>
-											<td>
-												<div>
-													<p>1枚</p>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>
-												<div>
-													<p>曲数</p>
-												</div>
-											</th>
-											<td>
-												<div>
-													<p>12曲</p>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
+					</div>
+					<div class="goodsDetail">
+						<div class="productDetail">
+							<p class="musicName"><%= @product.product_name %></p>
+							<p class="artists"><%= @product.artist_name %></p>
 						</div>
-						<h3 class="h3title" id="productInformation">
-							商品の紹介
-						</h3>
-						<div class="customerSection">
-							<div class="productDetailSentenceList">
-								<div class="productDetailSentenceTop">
-									<div class="productDetailSentenceMid">
-										<p>SONIC YOUTH Simon Werner A Disparu (Original Enregistrement Sonore) (2011 French 12-track CD in the Perspectives Musicales series featuring music from the soundtrack to Fabrice Goberts French teen thriller housed in a digipak factory sealedfrom new SYR9)</p>
-									</div>
-								</div>
+					<div class="productDetail2">
+						<p class="textcolorgray">※発送されてからお届けまでの日数は、地域により異なります</p>
+					</div>
+					</div>
+					<div class="goodsDetail2">
+						<div class="goodsCart">
+							<ul>
+								<li class="default">
+									<dl>
+										<dt>価格(税込)</dt>
+										<dd><span>¥<%= @product.price %></span></dd>
+									</dl>
+								</li>
+							</ul>
+							<p class="cartBtn">
+								<button type="submit">
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>カートへ入れる</button>
+							</p>
+						</div>
+					</div>
+				</div>
+				<h3 class="h3title" id="productInformation">商品の情報</h3>
+				<div class="customerSection clearfix">
+					<div class="productDetailInfoTable">
+						<table cellpadding="0" cellspacing="1" border="0">
+							<colgroup>
+								<col width="30%">
+								<col width="70%">
+							</colgroup>
+							<tbody>
+								<tr class="even">
+									<th>
+										<div><p>発売日</p></div>
+									</th>
+									<td>
+										<div><p><%= @product.release_date %></p></div>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div><p>レーベル</p></div>
+									</th>
+									<td>
+										<div><p><%= @product.label %></p></div>
+									</td>
+								</tr>
+								<tr class="even">
+									<th>
+										<div><p>ディスク枚数</p></div>
+									</th>
+									<td>
+										<div><p><%= @disc %>枚</p></div>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div><p>曲数</p></div>
+									</th>
+									<td>
+										<div><p><%= @music %>曲</p></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<h3 class="h3title" id="productInformation">商品の紹介</h3>
+				<div class="customerSection">
+					<div class="productDetailSentenceList">
+						<div class="productDetailSentenceTop">
+							<div class="productDetailSentenceMid">
+								<p><%= @product.info %></p>
 							</div>
 						</div>
 					</div>
+				</div>
+				<h3 class="h3title" id="productInformation">収録内容</h3>
+				<div class="customerSection">
+					<div class="productDetailSentenceList">
+						<div class="productDetailSentenceTop">
+							<div class="productDetailSentenceMid">
+								<p>・構成数 | <%= @disc %>枚</p>
+								<p>・合計収録時間 | <%= @music_all_time %></p>
+							</div>
+						</div>
+					</div>
+				</div>
+					<div class="productDetailInfoTable">
+						<div class="productDetailInfoTable">
+						<table cellpadding="0" cellspacing="1" border="0">
+							<colgroup>
+								<col width="20%">
+								<col width="50%">
+								<col width="30%">
+							</colgroup>
+							<thead>
+								<th>曲番号</th>
+								<th>タイトル</th>
+								<th>時間</th>
+							</thead>
+							<tbody>
+							<%= @musicc.each do |music| %>
+								<tr class="even">
+									<td>
+										<div><p><%= music.music_number %></p></div>
+									</td>
+									<td>
+										<div><p><%= music.music_name %></p></div>
+									</td>
+									<td>
+										<div><p><%= music.music_time %></p></div>
+									</td>
+								</tr>
+							<% end %>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				<div class="customerSection clearfix">
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
