@@ -1,0 +1,13 @@
+<div>
+	<%= f.number_field :disc_number, class:"form-control input-sm discnumber", placeholder:"Disc番", style:"width: 80px;" %>
+	<%= f.text_field :disc_name, id:"InputText", class:"form-control input-sm discname", placeholder:"Disc名" %>
+	<%= f.hidden_field :id %>
+	<%= link_to_remove_field("Discを削除", f, {}) %>
+	<div>
+		<%= f.fields_for :musics do |m| %>
+		<%= render partial: "admin/products/music_form", locals: {f: m } %>
+		<% end %>
+		<%= link_to_add_field("曲を追加", f, :musics, {}) %>
+		<br>
+	</div>
+</div>
