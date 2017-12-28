@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+	before_action :authenticate_user!, only: [:show]
+
 	def index
 		@products = Product.all
 		@products = Product.page(params[:page]).reverse_order
