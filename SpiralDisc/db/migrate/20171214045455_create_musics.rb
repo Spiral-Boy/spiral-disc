@@ -4,7 +4,7 @@ class CreateMusics < ActiveRecord::Migration[5.1]
       t.integer :disc_id
       t.integer :music_number
       t.string :music_name
-      t.string :music_time
+      t.datetime :music_time
 
       t.timestamps
     end

@@ -1,7 +1,7 @@
 <div>
 	<%= f.number_field :music_number, class:"form-control input-sm ", placeholder:"曲番", style:"width: 80px; display: inline-block; margin: 5px 0 0 30px;" %>
 	<%= f.text_field :music_name, id:"InputText", class:"form-control input-sm", placeholder:"曲名", style:"width: 300px; display: inline-block; margin: 5px 0 0 5px;" %>
-	<%= f.time_field :music_time, class:"form-control input-sm", placeholder:"曲名", style:"width: 100px; display: inline-block; margin: 5px 5px 0 5px;" %>
+	<%= f.time_field :music_time, class:"form-control input-sm", placeholder:"収録時間", style:"width: 100px; display: inline-block; margin: 5px 5px 0 5px;" %>
   	<%= f.hidden_field :id %>
 	<%= link_to_remove_field("曲を削除", f, {}) %>
 </div>
