@@ -31,7 +31,7 @@
     <div id="rightcontent" style="margin-top: 20px;">
 		<article>
 			<section id="productlist">
-				<h1>商品一覧</h1>
+				<h1 style="text-align:  left;margin:  0;padding-top:  0;color:  #fff;"><%= @genre.genre_name %>一覧</h1>
 			</section>
 			<section id="product">
 				<div id="productlistblock" class="clearfix">
@@ -46,8 +46,8 @@
 									<%= attachment_image_tag product, :image %>
 									<% end %>
 								</p>
-								<div>
-									<p class="musicname", style="color: #3d3d3e"><%= link_to product.product_name, product_path(product.id) %></p>
+								<div style="color: #fff">
+									<p class="musicname"><%= link_to product.product_name, product_path(product.id), {:style=>'color:#fff'} %></p>
 									<p class="artists"><%= product.artist_name %></p>
 									<p class="price">¥<%= product.price %> (税込)</p>
 								</div>
